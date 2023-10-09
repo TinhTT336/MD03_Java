@@ -22,7 +22,7 @@ public class Book {
     }
 
     public Book( String bookName, String author, String descriptions, double importPrice, double exportPrice, float interest, int quantity, boolean bookStatus) {
-        this.bookId = Book.count++;
+        this.bookId = bookId;
         this.bookName = bookName;
         this.author = author;
         this.descriptions = descriptions;

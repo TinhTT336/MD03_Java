@@ -13,18 +13,19 @@ public class BookMain {
 
     public static void main(String[] args) {
 
-        System.out.println("Menu chuc nang");
-        System.out.println("1. Them moi sach");
-        System.out.println("2. Hien thi tat ca sach trong thu vien");
-        System.out.println("3. Thay doi thong tin ");
-        System.out.println("4. Xóa sách theo mã sách");
-        System.out.println("5. Sắp xếp sách theo lợi nhuận tăng dần");
-        System.out.println("6. Tìm kiếm tương đối sách theo tên sách hoặc mô tả");
-        System.out.println("7. Tang so luong sach theo ma sach");
-        System.out.println("8. Ban sach - giam so luong sach theo ma sach");
-        System.out.println("9. Thoat");
 
         while (true) {
+            System.out.println("Menu chuc nang");
+            System.out.println("1. Them moi sach");
+            System.out.println("2. Hien thi tat ca sach trong thu vien");
+            System.out.println("3. Thay doi thong tin ");
+            System.out.println("4. Xóa sách theo mã sách");
+            System.out.println("5. Sắp xếp sách theo lợi nhuận tăng dần");
+            System.out.println("6. Tìm kiếm tương đối sách theo tên sách hoặc mô tả");
+            System.out.println("7. Tang so luong sach theo ma sach");
+            System.out.println("8. Ban sach - giam so luong sach theo ma sach");
+            System.out.println("9. Thoat");
+
             System.out.println("=================================");
             System.out.println("Hay nhap lua chon cua ban (1-9)");
             int choice = Integer.parseInt(scanner.nextLine());
@@ -72,11 +73,11 @@ public class BookMain {
                 int decreasedQuantity=Integer.parseInt(scanner.nextLine());
                if(books[i].getQuantity()>decreasedQuantity){
                    books[i].setQuantity(books[i].getQuantity()-decreasedQuantity);
-                   break;
+                   return;
                }
             }
         }
-//        System.out.println("Khong tim thay sach voi ma sach vua nhap");
+        System.out.println("Khong tim thay sach voi ma sach vua nhap");
     }
 
     private static void increaseBook() {
@@ -88,10 +89,10 @@ public class BookMain {
                 System.out.println("Nhap so luong sach muon tang them");
                 int increasedQuantity=Integer.parseInt(scanner.nextLine());
                 books[i].setQuantity(books[i].getQuantity()+increasedQuantity);
-                break;
+                return;
             }
         }
-//        System.out.println("Khong tim thay sach voi ma sach vua nhap");
+        System.out.println("Khong tim thay sach voi ma sach vua nhap");
 
     }
 
@@ -173,10 +174,17 @@ public class BookMain {
         int number = Integer.parseInt(scanner.nextLine());
         for (int i = 0; i < number; i++) {
             System.out.println("Nhap thong tin cuon sach thu " + (i + 1));
-            books[index] = new Book();
-            books[index].inputData();
-            index++;
+            //cach 1
+//            books[index] = new Book();
+//            books[index].inputData();
+//            index++;
+
+            //cach 2:
+            Book book=new Book();
+            book.inputData();
+            books[index++]=book;
 
         }
+        System.out.println("----------------------");
     }
 }
