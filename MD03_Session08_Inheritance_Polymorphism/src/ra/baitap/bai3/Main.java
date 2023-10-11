@@ -15,6 +15,6 @@ public class Main {
 
         movablePoint.setSpeed(3.7f,4.7f);
         System.out.println(Arrays.toString(movablePoint.getSpeed()));
-        movablePoint.move();
+        movablePoint.move().move().move();
     }
 }
